@@ -2,6 +2,12 @@
 
 本例子主要参考与：https://github.com/FalsinSoft/QtAndroidTools 的实现，在使用QtQuick for Android开发时总离不开一些与Android原生的交互，有些原生View在QtQuick中是不具备的或者不完善的，如果必需具备Android原生View的效果，可以通过以上进行借鉴实现
 
+注意事项：在使用SurfaceView嵌入到QML中时需要设置如下两个属性，意思就是设置当前图层为最顶部，否则，看不到。
+```
+                            mSurfaceView.setZOrderOnTop(true);
+                            mSurfaceView.setZOrderMediaOverlay(true);
+```
+
 实现效果图如下：
 
 <img src="https://github.com/zdc212133/AndroidViewToQML/blob/master/screenshot/1.png"/>
